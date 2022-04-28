@@ -1,3 +1,8 @@
-# dotfiles
+<p align="center">
+  <img width="25%" src="https://github.com/mirucaaura.png" />
+</p>
 
-my dotfiles
+<p align="center">
+  <b>🌹 miruca's dotfiles 🌹</b>
+</p>
+
