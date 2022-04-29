@@ -116,7 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# python virtual environment
+alias cvx='source /home/hikima/python-virtual-env/cvx/bin/activate'
+alias opt='source /home/hikima/python-virtual-env/opt/bin/activate'
+
 # deno
 # export DENO_INSTALL="/home/hikima/.deno"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# user-name
+export PS1="🌈\[\e[33m\] \W \[\e[0m\]\$ "
