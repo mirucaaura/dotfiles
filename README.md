@@ -6,3 +6,6 @@
   <b>🌹 miruca's dotfiles 🌹</b>
 </p>
 
+This is my personal collection of configuration files.
+
+Notice that `.vimrc` and `.vim` dotfiles are managed in [.vim](https://github.com/mirucaaura/.vim).
