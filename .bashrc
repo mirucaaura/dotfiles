@@ -1,3 +1,5 @@
+set vb t_vb=
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -119,11 +121,58 @@ fi
 # python virtual environment
 alias cvx='source /home/hikima/python-virtual-env/cvx/bin/activate'
 alias opt='source /home/hikima/python-virtual-env/opt/bin/activate'
+alias dea='deactivate'
 
 # deno
-# export DENO_INSTALL="/home/hikima/.deno"
+# export DENO_INSTALL="$HOME/.deno"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-# user-name
-export PS1="🌈\[\e[33m\] \W \[\e[0m\]\$ "
+# PS1
+# export PS1="\[\e[33m\] \w \[\e[0m\]\$ "
+# export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w \[\033[01;31m\]$(__git_ps1 "(%s)") \n\[\033[01;34m\]\$\[\033[00m\] '
+export PS1='\[\e[33m\] \w \[\e[0m\]\[\033[01;31m\]$(__git_ps1 "(%s)")\[\033[01;34m\]\$\[\033[00m\] '
+
+# export XDG_CONFIG_HOME="$HOME/.config"
+
+alias vi='nvim'
+alias vim='nvim'
+alias pbcopy='clip.exe'
+alias dein='vim ~/.config/nvim/dein.toml'
+alias viminit='vim ~/.config/nvim/init.vim'
+alias tmuxconf='vim ~/.tmux.conf'
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# bash
+alias bashrc='vim ~/.bashrc'
+
+# python
+alias py='python3'
+
+# rm
+alias rm='rm -i'
+
+# mkdir cd
+mkcd(){
+    mkdir -p -- "$1" &&
+        cd -P -- "$1"
+}
+
+# auto start tmux
+tmux_count=$(ps -ax | grep '[t]mux' | wc -l)
+if [ $SHLVL = 3 ]; then
+  if [ $tmux_count = 0 ]; then
+    tmux -u new-session
+  elif [ $tmux_count = 1 ]; then
+    tmux -u attach
+  fi
+fi
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!**/.git/*"'
+export FZF_CTRL_T_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
