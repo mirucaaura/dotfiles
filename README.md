@@ -9,6 +9,3 @@
 ## Resources
 
 This is my personal collection of configuration files.
-
-Notice that `.vimrc` and `.vim` dotfiles are managed in [mirucaaura
-/.vim](https://github.com/mirucaaura/.vim).
