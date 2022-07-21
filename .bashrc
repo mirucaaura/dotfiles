@@ -118,11 +118,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# python virtual environment
-alias cvx='source /home/hikima/python-virtual-env/cvx/bin/activate'
-alias opt='source /home/hikima/python-virtual-env/opt/bin/activate'
-alias dea='deactivate'
-
 # deno
 # export DENO_INSTALL="$HOME/.deno"
 export DENO_INSTALL="$HOME/.deno"
